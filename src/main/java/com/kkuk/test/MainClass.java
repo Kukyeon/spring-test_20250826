@@ -19,10 +19,11 @@ public class MainClass {
 		//myCalculator2.subtraction();
 		
 		
-		String configLocation = "classpath:applicationCTX.xml";
+		String configLocation1 = "classpath:applicationCTX.xml";
+		String configLocation2 = "classpath:applicationCTX2.xml";
 		// 스프링 컨테이너인 applicationCTX.xml(설정파일) 을 로드하라 (불러와라)
 		
-		AbstractApplicationContext ctx = new GenericXmlApplicationContext(configLocation);
+		AbstractApplicationContext ctx = new GenericXmlApplicationContext(configLocation1 ,configLocation2);
 		// ctx 라는 이름으로 컨테이너 생성
 		
 		MyCalculator myCalculator = ctx.getBean("myCalculator", MyCalculator.class);
