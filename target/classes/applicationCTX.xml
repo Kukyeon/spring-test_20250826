@@ -16,4 +16,41 @@
 		</property>
 	</bean>
 	
+	<!--  setter 를 이용한 객체 초기화 -->
+	<bean id="studentDto1" class="com.kkuk.test.StudentDto">
+		<property name="name" value="홍길동"></property>
+		<property name="age" value="17"></property>
+		<property name="gradeNum" value="4"></property>
+		<property name="classNum" value="5"></property>
+	</bean>
+	
+	<!-- 생성자를 이용한 객체 초기화 -->
+	<bean id="studentDto2" class="com.kkuk.test.StudentDto">
+		<constructor-arg>
+			<value>이순신</value>	
+		</constructor-arg>
+		<constructor-arg>
+			<value>20</value>	
+		</constructor-arg>
+		<constructor-arg>
+			<value>3</value>	
+		</constructor-arg>
+		<constructor-arg>
+			<value>7</value>	
+		</constructor-arg>
+	</bean>
+	
+	<bean id="studentInfo1" class="com.kkuk.test.StudentInfo">
+		<constructor-arg>
+			<ref bean="studentDto1"/>
+		</constructor-arg>
+	
+	</bean>
+	
+	<bean id="studentInfo2" class="com.kkuk.test.StudentInfo">
+		<property name="studentDto">
+			<ref bean="studentDto2"/>
+		</property>
+	
+	</bean>
 </beans>   
